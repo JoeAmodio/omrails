@@ -2,10 +2,14 @@
 	<div class="span6 offset3">
 		<div class="well">
 			<p>
-			  <strong>Description:</strong>
 			  <%= @trip.description %>
 			</p>
+			<p>
+				<%= @trip.user.name %>
+			</p>
+			<% if current_user == @trip.user %>
 			<%= link_to 'Edit', edit_trip_path(@trip) %> |
+			<% end %>
 			<%= link_to 'Back', trips_path %>
 		</div>
 	</div>
